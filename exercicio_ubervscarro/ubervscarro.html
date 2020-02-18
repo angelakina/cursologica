@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+
+
+<style> 
+        h1 {
+            color: rgb(117, 0, 195);;
+        }
+
+        h2 {
+            color: rgb(117, 0, 195);;
+        }
+</style>
+
+
+<title> Uber vs Carro </title>
+<h1> Uber vs Carro </h1>
+<br>
+
+
+<h2> Uber </h2> 
+
+<script>
+    function pega_numero () {
+     var valor_digitado = parseFloat(
+          prompt (mensagem_prompt).replace ("O", "0"). replace (",",".")
+      )
+    return valor_digitado
+}
+
+     var taxa_base = 2
+     var mensagem_prompt = "Digite a distância percorrida:"
+     var distancia = pega_numero ()
+     var velocidade_media = 25
+
+     var tempo_minutos = distancia / velocidade_media * 60
+     var total_uber = taxa_base + 1.4 * distancia + 0.26 * tempo_minutos
+
+    document.write(`
+    Total: R$ ${ total_uber.toFixed(2).replace(".",",") }
+`)
+
+</script>
+
+
+
+<br> <br>
+
+<h2> Carro </h2>
+
+<script>
+      var mensagem_prompt = "Digite o valor do estacionamento:"
+      var valor_estacionamento = pega_numero ()
+      var consumo_carro = 9
+      var preco_litro = 4       
+
+      var valor_gasolina = distancia / consumo_carro * preco_litro
+      var total = valor_estacionamento + valor_gasolina
+
+  
+      document.write(`
+            Gasolina: R$ ${valor_gasolina.toFixed(2).replace ("O", "0"). replace(",",".")}<br>
+            Estacionamento: R$ ${valor_estacionamento.toFixed(2).replace ("O", "0"). replace (",",".")}
+            <br>
+            Total: R$ ${total.toFixed(2).replace ("O", "0"). replace (",",".")}
+            <br>
+    `)
+</script>
